@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+
+}
+.gameWhole{
+    width: 100vw;
+    height: 100vh;
+    background: teal;
+
+}
+.gameOptions{
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    position: absolute;
+    z-index: 1;
+    display: none;
+}
+.gameCanvas{
+    width: 1000px;
+    height: 1000px;
+    border: 1px solid black;
+}
+table{
+    border: 1px solid red;
+}
+td{
+    margin: 1px;
+    width: 50px;
+    height: 37px;
+    border: 1px solid green;
+}
+.gameLost{
+width: 100vw;
+height: 100vh;
+display: none;
+background: blue;
+}
