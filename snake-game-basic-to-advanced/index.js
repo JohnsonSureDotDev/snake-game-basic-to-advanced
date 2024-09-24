@@ -16,14 +16,12 @@ setInterval(() => {
     box[snake.headPosition].style.background="red"
     snakeTailPos>=gridOfreference?box[snakeTailPos].style.background="transparent":""
 console.log(snakeTailPos) 
-
-
 if(snake.headPosition>snake.length&&(snake.headPosition+1)%(numberOfGrids/10)===0){
     if(snakeGameOption==="classic"){
          snake.virtualHeadPos=snake.headPosition
          snake.headPosition-=numberOfGrids/10
     }else{
-        //gameOver()
+        //gameOver() code here
     }
    
 }
