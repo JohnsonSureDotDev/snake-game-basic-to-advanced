@@ -1,8 +1,8 @@
 
 const box=document.getElementsByClassName("box")
 const snake={}
-snake.headPosition=10
-snake.length=4
+snake.headPosition=0
+snake.length=2
 snake.speed=100
 snake.virtualHeadPos=0
 snake.headTrail={}
@@ -11,13 +11,14 @@ snake.headTrail.increment=[]
 let snakeGameOption="classic"
 let numberOfGrids=100
 let tileOfreference=0
-let incrementOrDecrement=1
+let incrementOrDecrement=10
 let fruitPosition
 
 //random fruit
 fruitIsEaten = function(){
     fruitPosition=Math.floor(Math.random()*98)  
-  box[fruitPosition].style.background="green"
+  box[fruitPosition].style.backgroundColor="green"
+  return fruitPosition
   }
   fruitIsEaten()
 
@@ -31,17 +32,16 @@ setInterval(() => {
 //snake growing script
 if(snake.headPosition===fruitPosition){
     snake.length+=1
+    fruitIsEaten()
 }
-console.log(snake.length) 
-console.log(snake.headPosition)
 
 
    box[snake.headPosition].style.background="red"
     snakeTailPos=snake.headPosition-snake.length
     
     //code below is for colouring every tile that the snake tail passes through
-    snakeTailPos>=tileOfreference?box[(()=>{
- return snake.headTrail.position[snake.headTrail.position.length-snake.length]??50       
+    snake.headTrail.position.length>=snake.length+1?box[(()=>{
+ return(snake.headTrail.position[snake.headTrail.position.length-snake.length-1]??50===fruitPosition?51:50  )     
     })()].style.background="transparent":""
 
     //code below is for snake head to loop one end to another
